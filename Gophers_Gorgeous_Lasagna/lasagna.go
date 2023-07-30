@@ -1,4 +1,4 @@
-package lasagna
+package Gophers_Gorgeous_Lasagna
 
 const OvenTime = 40
 
@@ -7,12 +7,12 @@ func RemainingOvenTime(actualMinutesInOven int) int {
 	return OvenTime - actualMinutesInOven
 }
 
-// PreparationTime calculates the time needed to prepare the lasagna based on the amount of layers.
+// PreparationTime calculates the time needed to prepare the Gophers_Gorgeous_Lasagna based on the amount of layers.
 func PreparationTime(numberOfLayers int) int {
 	return 2 * numberOfLayers
 }
 
-// ElapsedTime calculates the time elapsed cooking the lasagna. This time includes the preparation time and the time the lasagna is baking in the oven.
+// ElapsedTime calculates the time elapsed cooking the Gophers_Gorgeous_Lasagna. This time includes the preparation time and the time the Gophers_Gorgeous_Lasagna is baking in the oven.
 func ElapsedTime(numberOfLayers, actualMinutesInOven int) int {
 	return actualMinutesInOven + PreparationTime(numberOfLayers)
 }

@@ -1,6 +1,6 @@
 # Go-Exercism
 
-This repository contains my solutions to the exercises in the Go track on [exercism.org](https://exercism.org/tracks/go)<br>
+This repository contains my solutions to the exercises in the Go track on [exercism.org](https://exercism.org/tracks/go).<br>
 
 Exercism is an online platform that offers coding exercises and mentorship for various programming languages. The Go track focuses on improving proficiency in Go programming through a series of progressively challenging exercises.
 

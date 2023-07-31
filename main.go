@@ -1,12 +1,21 @@
 package main
 
-func ScaleRecipe(quantities []float64, n int) []float64 {
-	res := make([]float64, 0)
-	for _, v := range quantities {
-		res = append(res, v*(float64(n)/2))
+import "fmt"
+
+func Replace(log string, oldRune, newRune rune) string {
+	tmp := ""
+	for _, char := range log {
+		if char == oldRune {
+			tmp += string(newRune)
+		} else {
+			tmp += string(char)
+		}
 	}
-	return res
+	return tmp
 }
 func main() {
-	ScaleRecipe([]float64{0.6, 300, 1, 0.5, 50, 0.1, 100}, 3)
+	log := "please replace '👎' with '👍'"
+
+	fmt.Println(Replace(log, '👎', '👍'))
+
 }

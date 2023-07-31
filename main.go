@@ -13,9 +13,14 @@ func Replace(log string, oldRune, newRune rune) string {
 	}
 	return tmp
 }
+func NewVoteCounter(initialVotes int) *int {
+	var res *int = &initialVotes
+	return res
+}
 func main() {
 	log := "please replace '👎' with '👍'"
 
 	fmt.Println(Replace(log, '👎', '👍'))
 
+	fmt.Println(NewVoteCounter(12))
 }

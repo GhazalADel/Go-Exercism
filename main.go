@@ -13,14 +13,20 @@ func Replace(log string, oldRune, newRune rune) string {
 	}
 	return tmp
 }
-func NewVoteCounter(initialVotes int) *int {
-	var res *int = &initialVotes
-	return res
+func DescribeNumber(f float64) string {
+	return fmt.Sprintf("This is the number %.1f", f)
+}
+func DescribeAnything(i interface{}) string {
+	switch i.(type) {
+	case int:
+		return DescribeNumber(float64(i.(int)))
+	case float64:
+		return DescribeNumber(i.(float64))
+	}
+	return "Return to sender"
 }
 func main() {
-	log := "please replace '👎' with '👍'"
-
-	fmt.Println(Replace(log, '👎', '👍'))
-
-	fmt.Println(NewVoteCounter(12))
+	fmt.Println(DescribeNumber(2))
+	fmt.Println(DescribeNumber(2.787))
+	fmt.Println(DescribeAnything(42))
 }

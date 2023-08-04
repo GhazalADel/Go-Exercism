@@ -1,8 +1,14 @@
-package main
+package collatzconjecture
 
-import "fmt"
+import "errors"
 
 func CollatzConjecture(n int) (int, error) {
+	if n == 1 {
+		return 0, nil
+	}
+	if n < 1 {
+		return 0, errors.New("")
+	}
 	count := 0
 	for n != 1 {
 		count++
@@ -14,8 +20,4 @@ func CollatzConjecture(n int) (int, error) {
 		}
 	}
 	return count, nil
-}
-func main() {
-	r, _ := CollatzConjecture(12)
-	fmt.Println(r)
 }

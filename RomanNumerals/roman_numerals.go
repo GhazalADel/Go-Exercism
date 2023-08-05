@@ -40,7 +40,7 @@ var mapping = map[int]string{
 func ToRomanNumeral(input int) (output string, err error) {
 	if input <= 0 {
 		return "", errors.New("")
-	} else if input > 3000 {
+	} else if input >= 4000 {
 		return "", errors.New("")
 	}
 

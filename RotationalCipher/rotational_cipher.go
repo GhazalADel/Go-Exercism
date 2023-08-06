@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package rotationalcipher
 
 func RotationalCipher(plain string, shiftKey int) string {
 	res := ""
@@ -9,20 +7,19 @@ func RotationalCipher(plain string, shiftKey int) string {
 		var tmp int = int(v)
 		tmp += shiftKey
 		//lower
-		if v >= 97 {
+		if v >= 97 && v <= 122 {
 			if tmp > 122 {
 				tmp -= 26
 			}
-		} else {
+			res += string(int32(tmp))
+		} else if v >= 65 && v <= 90 {
 			if tmp > 90 {
 				tmp -= 26
 			}
+			res += string(int32(tmp))
+		} else {
+			res += string(v)
 		}
-		res += string(tmp)
 	}
 	return res
-}
-
-func main() {
-	fmt.Println(RotationalCipher("a", 0))
 }

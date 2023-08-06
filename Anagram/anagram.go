@@ -1,4 +1,4 @@
-package main
+package anagram
 
 import (
 	"sort"
@@ -29,8 +29,4 @@ func Detect(subject string, candidates []string) []string {
 		}
 	}
 	return res
-}
-
-func main() {
-	Detect("master", []string{"stream", "pigeon", "maters"})
 }

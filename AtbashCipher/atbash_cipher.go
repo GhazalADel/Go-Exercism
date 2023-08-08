@@ -1,9 +1,6 @@
-package main
+package atbash
 
-import (
-	"fmt"
-	"strings"
-)
+import "strings"
 
 func Atbash(s string) string {
 	s = strings.ToLower(s)
@@ -31,8 +28,4 @@ func Atbash(s string) string {
 		res = res[:len(res)-1]
 	}
 	return res
-}
-
-func main() {
-	fmt.Println(Atbash("Testing,1 2 3, testing."))
 }

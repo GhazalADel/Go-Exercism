@@ -1,4 +1,4 @@
-package Gophers_Gorgeous_Lasagna
+package GophersGorgeousLasagna
 
 import "testing"
 
@@ -10,7 +10,7 @@ type lasagnaTests struct {
 func TestOvenTime(t *testing.T) {
 	tests := []lasagnaTests{
 		{
-			name:     "Calculates how many minutes the Gophers_Gorgeous_Lasagna should be in the oven",
+			name:     "Calculates how many minutes the GophersGorgeousLasagna should be in the oven",
 			layers:   0,
 			time:     40,
 			expected: 40,

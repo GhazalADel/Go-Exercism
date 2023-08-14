@@ -1,8 +1,7 @@
-package main
+package robotname
 
 import (
 	"errors"
-	"fmt"
 	"math/rand"
 	"time"
 )
@@ -26,7 +25,6 @@ func (r *Robot) Name() (name string, err error) {
 }
 
 func (r *Robot) Reset() {
-	delete(robotNames, r.name)
 	r.name = generateName()
 }
 
@@ -37,24 +35,17 @@ func generateName() string {
 		pre := ""
 		for i := 0; i < 2; i++ {
 			n := y1.Intn(26) + 65
-			pre += string(n)
+			pre += string(rune(n))
 		}
 		suf := ""
 		for i := 0; i < 3; i++ {
 			n := y1.Intn(10) + 48
-			suf += string(n)
+			suf += string(rune(n))
 		}
-
 		name := pre + suf
 		if !robotNames[name] {
 			robotNames[name] = true
 			return name
 		}
 	}
-}
-
-func main() {
-	r := Robot{}
-	n, err := r.Name()
-	fmt.Printf("%v %v", n, err)
 }

@@ -1,7 +1,6 @@
-package main
+package allergies
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -60,11 +59,13 @@ func canMade(target uint, used map[string]bool) (bool, []string) {
 	if target == 0 {
 		return true, res
 	}
-	return false, nil
+	return false, []string{}
 
 }
 func Allergies(allergies uint) []string {
-	panic("Please implement the Allergies function")
+	allergies %= 256
+	_, res := canMade(allergies, map[string]bool{})
+	return res
 }
 
 func AllergicTo(allergies uint, allergen string) bool {
@@ -79,7 +80,4 @@ func AllergicTo(allergies uint, allergen string) bool {
 		return true
 	}
 	return false
-}
-func main() {
-	fmt.Println(AllergicTo(9, "peanuts"))
 }
